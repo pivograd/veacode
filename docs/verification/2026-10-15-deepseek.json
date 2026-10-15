@@ -1,0 +1,93 @@
+{
+  "task_id": "c42f11932f5a4032beafe2b0e3f0a39b",
+  "status": "completed",
+  "scenario": "primary deliberately unavailable; real OpenCode DeepSeek reserve",
+  "cli_version": "1.19.0",
+  "requested_model": "deepseek-v4-pro",
+  "observed_model": null,
+  "repair_round": 0,
+  "review": {
+    "accepted": true,
+    "summary": "maths.py now returns `a + b` (line 2). test_maths.py is unchanged and its SHA-256 digest matches the required value; the unittest check ran all 3 tests (test_positive, test_negative, test_zero) and passed. .gitignore only ignores .veacode/ and __pycache__/, consistent with no forbidden edits. No issues found."
+  },
+  "checks": [
+    {
+      "passed": true,
+      "exit_code": 0
+    },
+    {
+      "passed": true,
+      "exit_code": 0
+    }
+  ],
+  "attempts": [
+    {
+      "phase": "plan",
+      "route": "unavailable_primary",
+      "started_at": "2026-10-15T19:10:58.616168+00:00",
+      "finished_at": "2026-10-15T19:10:58.805453+00:00",
+      "success": false,
+      "failure": "unavailable",
+      "usage": {
+        "cost_kind": "estimate",
+        "cost_source": "opencode_catalog"
+      }
+    },
+    {
+      "phase": "plan",
+      "route": "deepseek",
+      "started_at": "2026-10-15T19:10:59.114472+00:00",
+      "finished_at": "2026-10-15T19:11:10.448866+00:00",
+      "success": true,
+      "failure": null,
+      "usage": {
+        "total": 8881,
+        "input": 4271,
+        "output": 466,
+        "reasoning": 48,
+        "cost_usd": 0.003926692,
+        "cost_kind": "estimate",
+        "cost_source": "opencode_catalog"
+      }
+    },
+    {
+      "phase": "execute",
+      "route": "deepseek",
+      "started_at": "2026-10-15T19:11:10.878230+00:00",
+      "finished_at": "2026-10-15T19:11:21.106632+00:00",
+      "success": true,
+      "failure": null,
+      "usage": {
+        "total": 27628,
+        "input": 3777,
+        "output": 419,
+        "reasoning": 8,
+        "cost_usd": 0.003853608,
+        "cost_kind": "estimate",
+        "cost_source": "opencode_catalog"
+      }
+    },
+    {
+      "phase": "review",
+      "route": "deepseek",
+      "started_at": "2026-10-15T19:11:22.279116+00:00",
+      "finished_at": "2026-10-15T19:11:39.671389+00:00",
+      "success": true,
+      "failure": null,
+      "usage": {
+        "total": 16122,
+        "input": 2919,
+        "output": 351,
+        "reasoning": 564,
+        "cost_usd": 0.004008576,
+        "cost_kind": "estimate",
+        "cost_source": "opencode_catalog"
+      }
+    }
+  ],
+  "limits": [
+    "Does not prove actual Max quota exhaustion or cross-provider crash recovery",
+    "Catalog cost estimates are not provider billing",
+    "Observed model not independently reported by OpenCode"
+  ]
+}

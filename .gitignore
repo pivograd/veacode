@@ -1,0 +1,17 @@
+.venv/
+.idea/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+.veacode/
+.env
+.env.*
+!.env.example
+*.sqlite3*
+_scratch/
+veacode.local.toml
+

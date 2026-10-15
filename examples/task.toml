@@ -1,0 +1,11 @@
+# A read-only first run against this repository; no verification commands required.
+goal = """
+Изучи README.md и pyproject.toml в этом репозитории.
+Подготовь краткую памятку: как установить проект, отправить и продолжить задачу,
+запустить тесты и сборку. Укажи, какие реальные интеграции ещё требуют проверки.
+Сверяй выводы с файлами проекта.
+"""
+kind = "research"
+read_only = true
+checks = []
+constraints = ["Пиши итог по-русски", "Сосредоточься на командах, полезных пользователю"]

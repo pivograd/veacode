@@ -1,0 +1,35 @@
+# Explicit routes. No credentials in this file.
+[policy]
+allow_deepseek = false # Enable once you authorize DeepSeek API usage.
+max_repairs = 1
+check_timeout_seconds = 120
+
+[routes.claude]
+harness = "claude"
+model = "opus"
+provider = "anthropic"
+billing = "claude_subscription"
+timeout_seconds = 900
+
+[routes.codex]
+harness = "codex"
+model = "gpt-6.1-sol"
+effort = "high"
+provider = "openai"
+billing = "chatgpt_subscription"
+timeout_seconds = 900
+# profile = "delegate" # Optional reuse of an existing Codex profile.
+
+[routes.deepseek]
+harness = "opencode"
+model = "deepseek-v4-pro"
+provider = "deepseek"
+billing = "deepseek_api"
+timeout_seconds = 900
+
+[routing]
+plan = ["claude", "codex", "deepseek"]
+execute = ["codex", "claude", "deepseek"]
+simple = ["deepseek", "codex", "claude"]
+debugging = ["codex", "claude", "deepseek"]
+review = ["claude", "codex", "deepseek"]
